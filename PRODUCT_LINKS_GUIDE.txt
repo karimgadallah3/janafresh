@@ -1,0 +1,81 @@
+
+═══════════════════════════════════════════════════════════════════════════
+                    دليل الربط بين الصفحات
+═══════════════════════════════════════════════════════════════════════════
+
+📌 كيفية الوصول لصفحات تفاصيل المنتجات:
+
+من صفحة products.html، عند الضغط على أي بطاقة منتج، سيتم التوجيه تلقائياً
+إلى صفحة product-detail.html مع معرف المنتج المناسب.
+
+═══════════════════════════════════════════════════════════════════════════
+
+🔗 روابط المنتجات:
+
+1. Navel Orange:
+   product-detail.html?product=navel-orange
+
+2. Valencia Orange:
+   product-detail.html?product=valencia-orange
+
+3. Mandarin:
+   product-detail.html?product=mandarin
+
+4. Lemon:
+   product-detail.html?product=lemon
+
+5. Grapefruit:
+   product-detail.html?product=grapefruit
+
+6. Table Grapes:
+   product-detail.html?product=grapes
+
+7. Pomegranate:
+   product-detail.html?product=pomegranate
+
+8. Mango:
+   product-detail.html?product=mango
+
+9. Iceberg Lettuce:
+   product-detail.html?product=lettuce
+
+10. Red Onions:
+    product-detail.html?product=onion
+
+11. Colored Peppers:
+    product-detail.html?product=pepper
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 ملاحظات هامة:
+
+1. دالة goToProduct في scripts.js:
+   - تقوم بالتوجيه التلقائي من products.html
+   - تضيف معرف المنتج إلى الـ URL
+   - تعمل عند الضغط على أي بطاقة منتج
+
+2. صفحة product-detail.html:
+   - تقرأ معرف المنتج من الـ URL
+   - تعرض التفاصيل المناسبة للمنتج
+   - تحتوي على جميع المواصفات الفنية
+
+3. التنقل بين الصفحات:
+   - من الصفحة الرئيسية → products.html
+   - من products.html → product-detail.html
+   - زر "All Products" يعيدك لصفحة المنتجات
+   - Breadcrumb للتنقل السريع
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎨 التصميم:
+
+- كل صفحة منتج تعرض:
+  ✓ صورة المنتج بحجم كبير
+  ✓ الاسم بالإنجليزي والعربي
+  ✓ الموسم
+  ✓ الوصف
+  ✓ المواصفات الفنية الكاملة
+  ✓ شهادات الجودة
+  ✓ زر طلب عرض سعر
+
+═══════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jana Fresh">
+    <meta name="keywords"
+        content="agricultural export, citrus, oranges, lemons, grapes, pomegranate, fresh produce, BRC, GLOBALG.A.P">
+    <title>Jana Fresh</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/ynpXRXPZ/Logo-11-Copy.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://i.ibb.co" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 home-header">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 hover-scale">
+                    <img src="https://i.ibb.co/j9BqHXhB/Logo-11.png" alt="Jana Fresh Logo"
+                        class="h-12 md:h-20 object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden xl:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg"
+                        id="home-link" data-en="Home" data-ar="المنزل" data-fr="Accueil" data-zh="主页">Home</a>
+                    <a href="about.html" class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg"
+                        id="about-link" data-en="About Us" data-ar="من نحن" data-fr="À Propos" data-zh="关于我们">About
+                        Us</a>
+                    <a href="products.html" class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg"
+                        id="products-link" data-en="Products" data-ar="المنتجات" data-fr="Produits"
+                        data-zh="产品">Products</a>
+                    <a href="quality.html" class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg"
+                        id="quality-link" data-en="Quality Management" data-ar="إدارة الجودة" data-fr="Gestion Qualité"
+                        data-zh="质量管理">Quality Management</a>
+                    <a href="certificates.html"
+                        class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg" id="certificates-link"
+                        data-en="Certificates" data-ar="شهادات الاعتماد" data-fr="Certificats"
+                        data-zh="证书">Certificates</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-green-600 font-semibold text-lg"
+                        id="contact-link" data-en="Contact Us" data-ar="تواصل معنا" data-fr="Contactez-Nous"
+                        data-zh="联系我们">Contact Us</a>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center gap-2 md:gap-4">
+                    <div class="language-dropdown">
+                        <button
+                            class="language-btn w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-600 text-white flex items-center justify-center hover:bg-green-700 shadow-lg">
+                            <i class="fas fa-lemon text-lg md:text-xl"></i>
+                        </button>
+                        <div class="language-menu absolute mt-2 bg-white rounded-xl shadow-xl py-2 min-w-[160px]">
+                            <button onclick="changeLanguage('en')"
+                                class="language-menu-item w-full px-4 py-3 text-left hover:bg-green-50 transition-colors flex items-center gap-3">
+                                <span class="text-2xl">EN</span>
+                                <span class="font-medium">English</span>
+                            </button>
+                            <button onclick="changeLanguage('ar')"
+                                class="language-menu-item w-full px-4 py-3 text-left hover:bg-green-50 transition-colors flex items-center gap-3">
+                                <span class="text-2xl">AR</span>
+                                <span class="font-medium">العربية</span>
+                            </button>
+                            <button onclick="changeLanguage('fr')"
+                                class="language-menu-item w-full px-4 py-3 text-left hover:bg-green-50 transition-colors flex items-center gap-3">
+                                <span class="text-2xl">FR</span>
+                                <span class="font-medium">Français</span>
+                            </button>
+                            <button onclick="changeLanguage('zh')"
+                                class="language-menu-item w-full px-4 py-3 text-left hover:bg-green-50 transition-colors flex items-center gap-3">
+                                <span class="text-2xl">🇨🇳</span>
+                                <span class="font-medium">中文</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()"
+                        class="xl:hidden mobile-menu-btn text-gray-700 text-xl md:text-2xl">
+                        <i class="fas fa-bars mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu xl:hidden mt-4">
+                <a href="index.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold" data-en="Home"
+                    data-ar="المنزل" data-fr="Accueil" data-zh="主页">Home</a>
+                <a href="about.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold"
+                    data-en="About Us" data-ar="من نحن" data-fr="À Propos" data-zh="关于我们">About Us</a>
+                <a href="products.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold"
+                    data-en="Products" data-ar="المنتجات" data-fr="Produits" data-zh="产品">Products</a>
+                <a href="quality.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold"
+                    data-en="Quality Management" data-ar="إدارة الجودة" data-fr="Gestion Qualité" data-zh="质量管理">Quality
+                    Management</a>
+                <a href="certificates.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold"
+                    data-en="Certificates" data-ar="شهادات الاعتماد" data-fr="Certificats" data-zh="证书">Certificates</a>
+                <a href="contact.html"
+                    class="mobile-menu-item block py-3 text-gray-700 hover:text-green-600 font-semibold"
+                    data-en="Contact Us" data-ar="تواصل معنا" data-fr="Contactez-Nous" data-zh="联系我们">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Hero Slider -->
+        <!-- Hero Slider -->
+        <div class="hero-slider">
+            <!-- Slide 1: (Core Product) -->
+            <div class="slide">
+                <video muted loop playsinline preload="none">
+                    <!-- Cloudinary Direct Link -->
+                    <source src="https://res.cloudinary.com/dhry4y3sv/video/upload/v1763973864/Video_2_b8z6jn.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+            </div>
+            <!-- Slide 2: -->
+            <div class="slide active">
+                <img src="https://i.ibb.co/hJP88NTq/Screenshot-Gallery.jpg" alt="Fresh Egyptian Oranges" loading="eager"
+                    decoding="async">
+                <div class="slide-overlay"></div>
+            </div>
+            <!-- Slide 3: Video -->
+            <div class="slide">
+                <video muted loop playsinline preload="none">
+                    <!-- Cloudinary Direct Link -->
+                    <source src="https://res.cloudinary.com/dhry4y3sv/video/upload/Video_1_njb1gd.mp4" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+            </div>
+
+            <!-- Slide 4: -->
+            <div class="slide">
+                <img src="https://i.ibb.co/MxXYbBjy/IMG-20250422-WA0001-1.jpg" alt="Premium Table Grapes" loading="lazy"
+                    decoding="async">
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+        <!-- Slide 5: -->
+        <div class="slide">
+            <img src="https://i.ibb.co/My86ZKT3/Screenshot-Gallery.jpg" alt="Fresh Pomegranates" loading="lazy"
+                decoding="async">
+            <div class="slide-overlay"></div>
+        </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="slider-btn prev-btn" aria-label="Previous Slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next-btn" aria-label="Next Slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="hero-content text-center text-white max-w-4xl mx-auto">
+                <h1 class="hero-title mb-6 text-4xl md:text-6xl lg:text-7xl" data-en="Jana Fresh" data-ar="جني فريش"
+                    data-fr="Jana Fresh" data-zh="Jana Fresh">Jana Fresh</h1>
+                <p class="hero-subtitle mb-12 text-lg md:text-2xl" data-en="We meet your expectations and more"
+                    data-ar="نحن نلبي توقعاتك وأكثر بكثير" data-fr="Nous répondons à vos attentes et plus encore"
+                    data-zh="我们不仅满足您的期望，而且超越您的期望">Premium
+                    Agricultural Exports for Global Markets</p>
+                <div class="flex flex-wrap gap-6 justify-center">
+                    <a href="products.html" class="btn-primary" data-en="Explore Products" data-ar="استكشف المنتجات"
+                        data-fr="Explorer les Produits" data-zh="探索产品">
+                        Explore Products
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="contact.html" class="btn-primary" data-en="Contact Us" data-ar="تواصل معنا"
+                        data-fr="Contactez-Nous" data-zh="联系我们">
+                        Contact Us
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
+            <i class="fas fa-chevron-down text-white text-3xl opacity-70"></i>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text mb-4 fade-in"
+                    data-en="About Jana Fresh" data-ar="عن جني فريش" data-fr="À Propos de Jana Fresh"
+                    data-zh="关于 Jana Fresh">About Jana Fresh</h2>
+                <div class="section-divider fade-in"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-6 fade-in"
+                    data-en="Leading the agricultural export industry with premium quality produce and international standards"
+                    data-ar="نقود صناعة التصدير الزراعي بمنتجات عالية الجودة ومعايير دولية"
+                    data-fr="Leader de l'industrie de l'exportation agricole avec des produits de qualité supérieure et des normes internationales"
+                    data-zh="以优质产品和国际标准引领农产品出口行业">Leading the agricultural export industry with premium quality produce
+                    and international standards</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left image-reveal">
+                    <img src="https://i.ibb.co/My86ZKT3/Screenshot-Gallery.jpg" alt="About Jana Fresh"
+                        class="w-full rounded-3xl shadow-2xl" loading="lazy">
+                </div>
+
+                <div class="space-y-6 fade-in-right">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 floating">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-en="Our Mission" data-ar="مهمتنا"
+                                    data-fr="Notre Mission" data-zh="我们的使命">Our Mission</h3>
+                                <p class="text-gray-700 leading-relaxed"
+                                    data-en="To deliver the finest agricultural products to global markets while maintaining the highest standards of quality, safety, and sustainability."
+                                    data-ar="تقديم أفضل المنتجات الزراعية للأسواق العالمية مع الحفاظ على أعلى معايير الجودة والسلامة والاستدامة."
+                                    data-fr="Fournir les meilleurs produits agricoles aux marchés mondiaux tout en maintenant les plus hauts standards de qualité, sécurité et durabilité."
+                                    data-zh="向全球市场提供最优质的农产品，同时保持最高的质量、安全和可持续性标准。">To deliver the finest agricultural
+                                    products to global markets while maintaining the highest standards of quality,
+                                    safety, and sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 floating"
+                                style="animation-delay: 0.5s;">
+                                <i class="fas fa-eye text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-en="Our Vision" data-ar="رؤيتنا"
+                                    data-fr="Notre Vision" data-zh="我们的愿景">Our Vision</h3>
+                                <p class="text-gray-700 leading-relaxed"
+                                    data-en="To become the most trusted partner in agricultural exports, known for excellence, innovation, and commitment to customer satisfaction."
+                                    data-ar="أن نصبح الشريك الأكثر ثقة في التصدير الزراعي، المعروف بالتميز والابتكار والالتزام برضا العملاء."
+                                    data-fr="Devenir le partenaire le plus fiable en exportations agricoles, reconnu pour l'excellence, l'innovation et l'engagement envers la satisfaction client."
+                                    data-zh="成为农产品出口领域最值得信赖的合作伙伴，以卓越、创新和对客户满意度的承诺而闻名。">To become the most trusted
+                                    partner in agricultural exports, known for excellence, innovation, and commitment to
+                                    customer satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <a href="about.html" class="btn-primary" data-en="Learn More About Us" data-ar="اعرف المزيد عنا"
+                            data-fr="En Savoir Plus Sur Nous" data-zh="了解更多关于我们">
+                            Learn More About Us
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 parallax-bg" style="background-image: url('https://i.ibb.co/Qvf8QHm7/IMG-1.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-green-900/90 to-blue-900/90"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center text-white scale-in">
+                    <div class="stat-number mb-2" data-target="15">0</div>
+                    <p class="text-xl opacity-90" data-en="Years Experience" data-ar="سنوات خبرة"
+                        data-fr="Années d'Expérience" data-zh="年经验">Years Experience</p>
+                </div>
+
+                <div class="text-center text-white scale-in" style="transition-delay: 0.2s;">
+                    <div class="stat-number mb-2" data-target="50">0</div>
+                    <p class="text-xl opacity-90" data-en="Export Countries" data-ar="دول التصدير"
+                        data-fr="Pays d'Exportation" data-zh="出口国家">Export Countries</p>
+                </div>
+
+                <div class="text-center text-white scale-in" style="transition-delay: 0.4s;">
+                    <div class="stat-number mb-2" data-target="100">0</div>
+                    <p class="text-xl opacity-90" data-en="Quality Inspections" data-ar="فحوصات الجودة"
+                        data-fr="Inspections Qualité" data-zh="质量检查">Quality Inspections</p>
+                </div>
+
+                <div class="text-center text-white scale-in" style="transition-delay: 0.6s;">
+                    <div class="stat-number mb-2" data-target="6">0</div>
+                    <p class="text-xl opacity-90" data-en="Certifications" data-ar="الشهادات" data-fr="Certifications"
+                        data-zh="认证">Certifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text mb-4 fade-in"
+                    data-en="Our Premium Products" data-ar="منتجاتنا المميزة" data-fr="Nos Produits Premium"
+                    data-zh="我们的优质产品">Our Premium Products
+                </h2>
+                <div class="section-divider fade-in"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-6 fade-in"
+                    data-en="Fresh, high-quality agricultural products certified to international standards"
+                    data-ar="منتجات زراعية طازجة وعالية الجودة معتمدة وفقاً للمعايير الدولية"
+                    data-fr="Produits agricoles frais et de haute qualité certifiés selon les normes internationales"
+                    data-zh="符合国际标准的新鲜高品质农产品">Fresh, high-quality agricultural products certified to international
+                    standards</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1: Navel Orange -->
+                <div class="product-card scale-in" onclick="goToProduct('navel-orange')">
+                    <div class="card">
+                        <div class="product-image-wrapper relative">
+                            <img src="https://i.ibb.co/whh6zp8Z/image.jpg" alt="Navel Orange"
+                                class="w-full h-72 object-cover" loading="lazy">
+                            <div class="product-badge" data-en="Premium Quality" data-ar="جودة ممتازة"
+                                data-fr="Qualité Premium" data-zh="优质品质">Premium Quality</div>
+                        </div>
+                        <div class="p-6 text-center relative z-10">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-en="Navel Orange"
+                                data-ar="برتقال بسرة" data-fr="Orange Navel" data-zh="脐橙">Navel Orange</h3>
+                            <p class="text-gray-600" data-en="Sweet & Seedless" data-ar="حلو وخالي من البذور"
+                                data-fr="Sucré & Sans Pépins" data-zh="甜美无籽">Sweet & Seedless</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Lemon -->
+                <div class="product-card scale-in" style="transition-delay: 0.1s;" onclick="goToProduct('lemon')">
+                    <div class="card">
+                        <div class="product-image-wrapper relative">
+                            <img src="https://i.ibb.co/0jy4y6Hf/image.jpg" alt="Lemon" class="w-full h-72 object-cover"
+                                loading="lazy">
+                            <div class="product-badge" data-en="Fresh & Juicy" data-ar="طازج وعصاري"
+                                data-fr="Frais & Juteux" data-zh="新鲜多汁">Fresh & Juicy</div>
+                        </div>
+                        <div class="p-6 text-center relative z-10">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-en="Lemon" data-ar="ليمون"
+                                data-fr="Citron" data-zh="柠檬">Lemon</h3>
+                            <p class="text-gray-600" data-en="High Acidity" data-ar="حموضة عالية"
+                                data-fr="Haute Acidité" data-zh="高酸度">High Acidity</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Table Grapes -->
+                <div class="product-card scale-in" style="transition-delay: 0.2s;" onclick="goToProduct('grapes')">
+                    <div class="card">
+                        <div class="product-image-wrapper relative">
+                            <img src="https://i.ibb.co/Qvf8QHm7/IMG-1.jpg" alt="Table Grapes"
+                                class="w-full h-72 object-cover" loading="lazy">
+                            <div class="product-badge" data-en="Export Quality" data-ar="جودة تصدير"
+                                data-fr="Qualité Export" data-zh="出口品质">Export Quality</div>
+                        </div>
+                        <div class="p-6 text-center relative z-10">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-en="Table Grapes" data-ar="عنب مائدة"
+                                data-fr="Raisins de Table" data-zh="鲜食葡萄">Table Grapes</h3>
+                            <p class="text-gray-600" data-en="Crisp & Sweet" data-ar="مقرمش وحلو"
+                                data-fr="Croquant & Sucré" data-zh="爽脆香甜">Crisp & Sweet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Pomegranate -->
+                <div class="product-card scale-in" style="transition-delay: 0.3s;" onclick="goToProduct('pomegranate')">
+                    <div class="card">
+                        <div class="product-image-wrapper relative">
+                            <img src="https://i.ibb.co/zhVSc37n/timthumb.jpg" alt="Pomegranate"
+                                class="w-full h-72 object-cover" loading="lazy">
+                            <div class="product-badge" data-en="Rich in Antioxidants" data-ar="غني بمضادات الأكسدة"
+                                data-fr="Riche en Antioxydants" data-zh="富含抗氧化剂">Rich in Antioxidants</div>
+                        </div>
+                        <div class="p-6 text-center relative z-10">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-en="Pomegranate" data-ar="رمان"
+                                data-fr="Grenade" data-zh="石榴">Pomegranate</h3>
+                            <p class="text-gray-600" data-en="Vibrant & Healthy" data-ar="نابض وصحي"
+                                data-fr="Vibrant & Sain" data-zh="鲜活健康">Vibrant & Healthy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 fade-in">
+                <a href="products.html" class="btn-primary text-xl" data-en="View All Products"
+                    data-ar="عرض جميع المنتجات" data-fr="Voir Tous les Produits" data-zh="查看所有产品">
+                    View All Products
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Certifications Preview -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 fade-in-left">
+                    <div class="inline-block">
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold gradient-text"
+                            data-en="Quality Excellence" data-ar="التميز في الجودة" data-fr="Excellence Qualité"
+                            data-zh="质量卓越">Quality Excellence
+                        </h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <p class="text-xl text-gray-700 leading-relaxed"
+                        data-en="Our commitment to quality is demonstrated through prestigious international certifications and rigorous quality control procedures at every stage of production."
+                        data-ar="يتجلى التزامنا بالجودة من خلال الشهادات الدولية المرموقة وإجراءات مراقبة الجودة الصارمة في كل مرحلة من مراحل الإنتاج."
+                        data-fr="Notre engagement envers la qualité se manifeste par des certifications internationales prestigieuses et des procédures rigoureuses de contrôle qualité à chaque étape de la production."
+                        data-zh="我们对质量的承诺通过享有盛誉的国际认证以及生产每个阶段的严格质量控制程序得到体现。">Our commitment to quality is demonstrated
+                        through prestigious international certifications and rigorous quality control procedures at
+                        every stage of production.</p>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div
+                            class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl hover:scale-105 transition-transform">
+                            <i class="fas fa-certificate text-4xl text-green-600 mb-2"></i>
+                            <p class="font-bold text-gray-800">BRC</p>
+                        </div>
+                        <div
+                            class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:scale-105 transition-transform">
+                            <i class="fas fa-award text-4xl text-blue-600 mb-2"></i>
+                            <p class="font-bold text-gray-800">ISO 9001</p>
+                        </div>
+                        <div
+                            class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:scale-105 transition-transform">
+                            <i class="fas fa-globe text-4xl text-purple-600 mb-2"></i>
+                            <p class="font-bold text-gray-800">GLOBALG.A.P.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="quality.html" class="btn-primary" data-en="Quality Management" data-ar="إدارة الجودة"
+                            data-fr="Gestion Qualité" data-zh="质量管理">Quality Management</a>
+                        <a href="certificates.html" class="btn-primary" data-en="View Certificates"
+                            data-ar="عرض الشهادات" data-fr="Voir Certificats" data-zh="查看证书">View Certificates</a>
+                    </div>
+                </div>
+
+                <div class="fade-in-right image-reveal">
+                    <img src="https://i.ibb.co/MxXYbBjy/IMG-20250422-WA0001-1.jpg" alt="Quality Management"
+                        class="w-full rounded-3xl shadow-2xl" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 parallax-bg relative"
+        style="background-image: url('https://i.ibb.co/My86ZKT3/Screenshot-Gallery.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-600/90 to-blue-600/90"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in" data-en="Ready to Start?"
+                    data-ar="هل أنت مستعد للبدء؟" data-fr="Prêt à Commencer?" data-zh="准备开始了吗？">Ready to Start?</h2>
+                <p class="text-lg md:text-2xl mb-12 fade-in"
+                    data-en="Contact us today to discuss your agricultural export needs"
+                    data-ar="تواصل معنا اليوم لمناقشة احتياجات التصدير الزراعي الخاصة بك"
+                    data-fr="Contactez-nous aujourd'hui pour discuter de vos besoins en exportation agricole"
+                    data-zh="立即联系我们讨论您的农产品出口需求">Contact us today to discuss your agricultural export needs</p>
+                <a href="contact.html" class="btn-primary text-xl bg-white text-green-600 hover:bg-gray-100"
+                    data-en="Get In Touch" data-ar="تواصل معنا" data-fr="Nous Contacter" data-zh="联系我们">
+                    Get In Touch
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 text-white py-20">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div class="fade-in">
+                    <a href="index.html" class="inline-block mb-6">
+                        <img src="https://i.ibb.co/TDQrvZjt/Logo-22.png" alt="Jana Fresh Logo"
+                            class="h-20 hover-scale transition-transform">
+                    </a>
+                    <p class="text-gray-300 leading-relaxed mb-6"
+                        data-en="Premium agricultural export company delivering excellence to global markets since 2010."
+                        data-ar="شركة تصدير زراعي متميزة تقدم التميز للأسواق العالمية منذ 2010."
+                        data-fr="Entreprise d'exportation agricole premium offrant l'excellence aux marchés mondiaux depuis 2010."
+                        data-zh="自2010年以来向全球市场提供卓越服务的优质农产品出口公司。">Premium agricultural export company delivering
+                        excellence to global markets since 2010.</p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                            <div class="text-2xl font-bold text-green-400">15+</div>
+                            <div class="text-xs text-gray-400" data-en="Years" data-ar="سنة" data-fr="Ans" data-zh="年">
+                                Years</div>
+                        </div>
+                        <div class="text-center p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                            <div class="text-2xl font-bold text-green-400">50+</div>
+                            <div class="text-xs text-gray-400" data-en="Countries" data-ar="دولة" data-fr="Pays"
+                                data-zh="国家">Countries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="fade-in" style="transition-delay: 0.1s;">
+                    <h3 class="text-2xl font-bold mb-6 text-green-400" data-en="Quick Links" data-ar="روابط سريعة"
+                        data-fr="Liens Rapides" data-zh="快速链接">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="index.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="Home" data-ar="المنزل" data-fr="Accueil" data-zh="主页">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="About Us" data-ar="من نحن" data-fr="À Propos" data-zh="关于我们">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="Products" data-ar="المنتجات" data-fr="Produits" data-zh="产品">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="quality.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="Quality Management" data-ar="إدارة الجودة" data-fr="Gestion Qualité"
+                                data-zh="质量管理">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                Quality Management
+                            </a>
+                        </li>
+                        <li>
+                            <a href="certificates.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="Certificates" data-ar="الشهادات" data-fr="Certificats" data-zh="证书">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                Certificates
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="footer-link group flex items-center gap-2 text-gray-300 hover:text-green-400 transition-all"
+                                data-en="Contact" data-ar="اتصل بنا" data-fr="Contact" data-zh="联系">
+                                <i
+                                    class="fas fa-chevron-right text-xs text-green-400 group-hover:translate-x-1 transition-transform"></i>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-bold mb-6 text-green-400" data-en="Contact Info" data-ar="معلومات الاتصال"
+                        data-fr="Informations de Contact" data-zh="联系信息">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://maps.google.com/?q=Km+57+Cairo+Alexandria+Desert+Road" target="_blank"
+                                class="flex items-start gap-3 text-gray-300 hover:text-green-400 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600/40 transition-colors">
+                                    <i class="fas fa-map-marker-alt text-green-400"></i>
+                                </div>
+                                <span data-en="Km 57, Cairo-Alexandria Desert Road, Beheira Governorate, Egypt"
+                                    data-ar="كم 57 ، طريق القاهرة الإسكندرية الصحراوي ، محافظة البحيرة، مصر"
+                                    data-fr="Km 57, route du désert du Caire-Alexandrie, gouvernorat de Beheira, Égypte"
+                                    data-zh="埃及贝赫拉省开罗-亚历山大沙漠公路57公里处">Km 57, Cairo-Alexandria Desert Road, Beheira
+                                    Governorate, Egypt</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+201000019647"
+                                class="flex items-start gap-3 text-gray-300 hover:text-green-400 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600/40 transition-colors">
+                                    <i class="fas fa-phone text-green-400"></i>
+                                </div>
+                                <span>+201000019647</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:export@janafresh.com"
+                                class="flex items-start gap-3 text-gray-300 hover:text-green-400 transition-colors group">
+                                <div
+                                    class="w-10 h-10 bg-green-600/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-600/40 transition-colors">
+                                    <i class="fas fa-envelope text-green-400"></i>
+                                </div>
+                                <span>export@janafresh.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us & Newsletter -->
+                <div class="fade-in" style="transition-delay: 0.3s;">
+                    <h3 class="text-2xl font-bold mb-6 text-green-400" data-en="Follow Us" data-ar="تابعنا"
+                        data-fr="Suivez-Nous" data-zh="关注我们">Follow Us</h3>
+
+                    <!-- Social Media Icons -->
+                    <div class="flex flex-wrap gap-3 mb-8">
+                        <a href="mailto:export@janafresh.com"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/201000019647" target="_blank"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-green-500 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/janafresh2010/" target="_blank"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://eg.linkedin.com/company/jana-fresh" target="_blank"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://youtu.be/bHMN0f8jpx4?si=CfVjd3AIKToHly_U" target="_blank"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" target="_blank"
+                            class="social-icon-footer w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="bg-white/5 p-6 rounded-xl backdrop-blur-sm">
+                        <h4 class="text-lg font-semibold mb-3" data-en="Newsletter" data-ar="النشرة الإخبارية"
+                            data-fr="Newsletter" data-zh="通讯">Newsletter</h4>
+                        <p class="text-sm text-gray-400 mb-4" data-en="Subscribe to get updates"
+                            data-ar="اشترك للحصول على التحديثات" data-fr="Abonnez-vous pour recevoir les mises à jour"
+                            data-zh="订阅获取更新">Subscribe to get updates</p>
+                        <form class="flex gap-2">
+                            <input type="email" placeholder="Your email"
+                                class="flex-1 px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-green-400 transition-colors"
+                                data-en="Your email" data-ar="بريدك الإلكتروني" data-fr="Votre email" data-zh="您的邮箱">
+                            <button type="submit"
+                                class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-colors">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-center md:text-left" data-en="© 2025 Jana Fresh. All rights reserved."
+                        data-ar="© 2025 جني فريش. جميع الحقوق محفوظة."
+                        data-fr="© 2025 Jana Fresh. Tous droits réservés." data-zh="© 2025 Jana Fresh。保留所有权利。">© 2025
+                        Jana Fresh. All rights reserved.</p>
+
+                    <div class="flex gap-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition-colors"
+                            data-en="Privacy Policy" data-ar="سياسة الخصوصية" data-fr="Politique de Confidentialité"
+                            data-zh="隐私政策">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition-colors"
+                            data-en="Terms of Service" data-ar="شروط الخدمة" data-fr="Conditions d'Utilisation"
+                            data-zh="服务条款">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
